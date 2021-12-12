@@ -17,11 +17,12 @@ for j in range(number):
         if sorted_list[i] > sorted_list[i+1]:
             sorted_list[i], sorted_list[i+1] = sorted_list[i+1], sorted_list[i]
 print(f'Исходный список из {number} элементов:\n{original_list}\n'
-f'Отсортированный список:\n{sorted_list}\n')
+      f'Отсортированный список:\n{sorted_list}\n')
 
 # №2 Словарь цветов
 print('№2 Словарь цветов \n')
-color_dict = {'Lime': ('00FF00', '0,255,0'), 'LightSeaGreen': ('20B2AA','32,178,170'), 'Lavender': ('E6E6FA', '230,230,250'), 'Aqua': ('00FFFF', '0,255,255')}
+color_dict = {'Lime': ('00FF00', '0,255,0'), 'LightSeaGreen': ('20B2AA','32,178,170'),
+              'Lavender': ('E6E6FA', '230,230,250'), 'Aqua': ('00FFFF', '0,255,255')}
 color_dict['Gold'] = ('FFD700', '255,215,0')
 color_dict['Maroon'] = ('800000', '128,0,0')
 print(f'Словарь цветов из 6 цветов: \n{color_dict} \n')
@@ -36,18 +37,26 @@ f'Входят только в 1ое, но не входят во 2ое: \n{set_
 f'Входят только во 2ое, но не входят во 1ое: \n{set_2.difference(set_1)} \n'
 f'Входят в 1ое или во 2ое, но не в оба из них одновременно: \n{set_1.symmetric_difference(set_2)} \n')
 
-# №4 Игровой инвентарь
+''' №4 Игровой инвентарь
+Игровой инвентарь вмещает в себя 10кг, каждый предмет имеет свой вес.
+Пользователь может посмотреть содержимое инвентаря,
+добавить новый предмет в инвентарь (если инвентарь не полон),
+удалить предмет из инвентаря (если инвентарь не пуст),
+завершить работу с инвентарём словом "стоп".
+'''
 print('№4 Игровой инвентарь \n')
 inventory_capacity = 10
 inventory = {'палка': 0.3, 'копьё': 1, 'меч': 2, 'факел': 1.7, 'золото': 3, 'вода': 0.7}
 print(f'Вместимость инвентаря {inventory_capacity}кг \n'
-f'В инвентаре {sum(value for value in inventory.values())}кг \nСодержимое инвентаря: \n',' кг,   '.join("{}: {}".format(k, v) for k, v in inventory.items()),'кг \n')
+      f'В инвентаре {sum(value for value in inventory.values())}кг \nСодержимое инвентаря: \n',
+       ' кг,   '.join("{}: {}".format(k, v) for k, v in inventory.items()),'кг \n')
 print('Возможные действия для работы с инвентарём \n'
-    '"+" - добавить предмет в инвентарь, "-" - удалить предмет из инвентаря \n'
-    '"с" - посмотреть содержимое инвентаря, "стоп" - завершить работу с инвентарём')
+      '"+" - добавить предмет в инвентарь, "-" - удалить предмет из инвентаря \n'
+      '"с" - посмотреть содержимое инвентаря, "стоп" - завершить работу с инвентарём')
 while True:
     action = input('Введите действие: ')
-    if action == '+':
+    # Добавление предмета в инвентарь:
+    if action == '+': 
         if inventory_capacity == sum(value for value in inventory.values()):
             print('Невозможно добавить предмет - инвентарь заполнен!')
             continue
@@ -64,7 +73,7 @@ while True:
                     continue
                 elif add_weight > (inventory_capacity - sum(value for value in inventory.values())):
                     print('Слишком большой вес - предмет не помещается в инвентарь! \n'
-                    'Уменьшите вес предмета или удалите какой-нибудь предмет из инвентаря.')
+                          'Уменьшите вес предмета или удалите какой-нибудь предмет из инвентаря.')
                     continue
                 else:
                     inventory[add_item] = add_weight
@@ -72,6 +81,7 @@ while True:
             else:
                 print('Этот предмет уже есть в инвентаре!')
                 continue
+    # Удаление предмета из инвентаря:
     elif action == '-':
         if len(inventory) == 0:
             print('Невозможно удалить предмет - инвентарь пуст!')
@@ -85,18 +95,22 @@ while True:
                 inventory.pop(del_item)
                 if len(inventory) != 0:
                     print('Предмет успешно удалён! \n' f'В инвентаре {sum(value for value in inventory.values())}кг \n'
-                    'Содержимое инвентаря: \n',' кг,   '.join("{}: {}".format(k, v) for k, v in inventory.items()),'кг \n')
+                          'Содержимое инвентаря: \n',' кг,   '.join("{}: {}".format(k, v) for k, v in inventory.items()),'кг \n')
                 else:
                     print('Предмет успешно удалён! \nИнвентарь пуст.')
+    # Просмотр содержимого инвентаря:
     elif action == 'с':
         if len(inventory) != 0:
-            print(f'В инвентаре {sum(value for value in inventory.values())}кг \nСодержимое инвентаря: \n',' кг,   '.join("{}: {}".format(k, v) for k, v in inventory.items()),'кг \n')
+            print(f'В инвентаре {sum(value for value in inventory.values())}кг \nСодержимое инвентаря: \n',
+                   ' кг,   '.join("{}: {}".format(k, v) for k, v in inventory.items()),'кг \n')
         else:
             print('Инвентарь пуст.')
+    # Завершение работы с инвентарём:
     elif action.lower() == 'стоп':
         if len(inventory) != 0:
-            print(f'Работа с инвентарём завершена. Содержимое инвентаря: \n',' кг,   '.join("{}: {}".format(k, v) for k, v in inventory.items()),'кг \n', 
-            f'В инвентаре {sum(value for value in inventory.values())}кг \n')
+            print(f'Работа с инвентарём завершена. Содержимое инвентаря: \n',
+                   ' кг,   '.join("{}: {}".format(k, v) for k, v in inventory.items()),'кг \n', 
+                  f'В инвентаре {sum(value for value in inventory.values())}кг \n')
             break
         else:
             print('Работа с инвентарём завершена. \nИнвентарь пуст.')
