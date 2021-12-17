@@ -1,0 +1,8 @@
+{
+    "python.testing.pytestArgs": [
+        "Lesson_9"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true,
+    "python.pythonPath": "~/AppData/Local/Microsoft/WindowsApps/python3.10.exe"
+}

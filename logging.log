@@ -1,0 +1,15 @@
+17-Dec-21 18:03:24 - root - INFO - Logged in
+17-Dec-21 18:03:30 - root - INFO - Program completed successfully
+17-Dec-21 18:03:30 - root - INFO - Run time: 0.0009996891021728516 seconds
+17-Dec-21 18:03:39 - root - INFO - Logged in
+17-Dec-21 18:03:41 - root - ERROR - Program interrupted: incorrect data entered
+17-Dec-21 18:03:41 - root - INFO - Run time: 0.000997781753540039 seconds
+17-Dec-21 18:03:45 - root - INFO - Logged in
+17-Dec-21 18:03:50 - root - ERROR - Program interrupted: incorrect data entered
+17-Dec-21 18:03:50 - root - INFO - Run time: 0.001001119613647461 seconds
+17-Dec-21 18:04:01 - root - INFO - Logged in
+17-Dec-21 18:04:09 - root - ERROR - Program interrupted: incorrect data entered
+17-Dec-21 18:04:09 - root - INFO - Run time: 0.0 seconds
+17-Dec-21 18:04:18 - root - INFO - Logged in
+17-Dec-21 18:04:35 - root - INFO - Program completed successfully
+17-Dec-21 18:04:35 - root - INFO - Run time: 0.0 seconds
