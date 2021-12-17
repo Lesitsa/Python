@@ -30,3 +30,4 @@ print(f'Исходный массив: \n{matrix} \n'
 '''
 print('№6 Число Фибоначчи \n')
 print(f'Это число: {fibonacci(check_number())}')
+
